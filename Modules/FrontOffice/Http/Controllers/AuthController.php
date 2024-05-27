@@ -2,6 +2,7 @@
 
 namespace Modules\FrontOffice\Http\Controllers;
 
+use App\Enums\SettingEnum;
 use App\Helpers\ApiResponse;
 use App\Models\Member;
 use Illuminate\Contracts\Support\Renderable;
@@ -29,6 +30,7 @@ class AuthController extends Controller
         {
         $payload = $authLoginRequest->validated();
         try {
+        dd(config(SettingEnum::STUDY_STARTING_TIME_SETTING->value));
             $credentials = $authLoginRequest->only('email', 'password');
 
             $token = Auth::attempt($credentials);
