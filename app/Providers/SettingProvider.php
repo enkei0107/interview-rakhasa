@@ -29,7 +29,7 @@ class SettingProvider extends ServiceProvider
         if (Schema::hasTable('settings')) {
             $Setting = Setting::all();
             foreach ($Setting as $data) {
-                Config::set($data['key'], $data['setting']);
+                // set config dengan key dan value dati kolom setting
             }
         }
     }
