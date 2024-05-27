@@ -25,21 +25,19 @@
 ```
 ## Interview test
 - Descriptions
-```json
 Aplikasi REST API untuk manajemen sekolah yang mengatur presensi siswa dan guru menggunakan Laravel adalah sebuah sistem yang memungkinkan pengelolaan data absensi secara efisien dan terintegrasi. Berikut adalah deskripsi dari aplikasi tersebut:
 Feature :
-# Authentication
+#### Authentication
     Login : Siswa dan guru authentication login
     Register : Register akun siswa dan guru dilakukan oleh admin sekolah
-# Manajemen Presensi
+#### Manajemen Presensi
     Presensi Siswa: Mencatat kehadiran siswa setiap hari, termasuk status (hadir, sakit, izin, alfa, terlambat) dan update presensi upload surat izin.
     Presensi Guru: Mencatat kehadiran guru setiap hari status(hadir,alfa)
     Scheduler daily: create presensi untuk guru dan siswa dengan status kehadiran default (alfa)
-# Setting
+#### Setting
     Presensi: Pengaturan jam hadir untuk presensi (jam awal untuk bisa presensi,jam selesai presensi, max minutes terlambat) dinamis
-```
 - Test
-    ```bash
+
     1. Fixing Modules/BackOffice/Http/Controllers/SettingController.php method Store untuk create setting. tabel setting digunakan sebagai config
     2. Fixing Modules/BackOffice/Http/Controllers/SettingController.php method index . menampilkan semua data ditabel setting mengguanakan pagination dan filter by key
     3. Fixing app/Providers/SettingProvider.php load semua setting ke dalam config , set config dari kolom key dan set value config dari kolom setting.
@@ -52,4 +50,4 @@ Feature :
     - jika presensi sudah dilakukan return kamu sudah melakukan presensi
     - untuk guru status presensi tidak ada terlambat
     - semua setting jam menggunakan config yang di load dari table setting example(config('jam mulai belajar'))
-    ```
+ 
